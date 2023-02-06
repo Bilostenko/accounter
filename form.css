@@ -10,8 +10,12 @@
 }
 
 .form {
-  width: 600px;
-  height: 600px;
+  width:
+    /* 600px */
+    40vw;
+  height:
+    /* 600px */
+    90vh;
   border: 1px solid black;
   border-radius: 10px;
   background-color: #fff;
@@ -26,19 +30,60 @@ h1 {
   margin-bottom: 20px;
 }
 
-input{
+input {
   height: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
-/*   padding: 0 10px;
-  margin-bottom: 20px; */
   font-size: 18px;
 }
 
-.form__persData, .form__persAddress{
-display: flex;
-justify-content: space-between;
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: 10px;
+  left: -1px;
+  position: relative;
+  background-color: #ffa500;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
+
+.form__persData,
+.form__persAddress {
+  display: flex;
+  justify-content: space-between;
+}
+
 input[type="text"] {
   width: 80%;
+}
+
+.form__propertyInputs, .form__ownershipInputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__btns{
+  display: flex;
+  justify-content: space-around;
+ flex-wrap: wrap;
+}
+button{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover{
+  background-color: #ccc;
+  transform: scale(1.1);
 }
