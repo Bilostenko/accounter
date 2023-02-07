@@ -27,13 +27,18 @@
       </div>
 
       <div class="form__propertyInputs">
-        <span>Майнове</span> <input type="radio" name="propInput">
-        <span>Немайнове</span> <input type="radio" name="propInput">
+        <span>Майнове</span> <input type="radio" name="propInput" id="property" checked>
+        <span>Немайнове</span> <input type="radio" name="propInput" id="noneProperty">
       </div>
 
-      <div class="form__ownershipInputs">
+      <div class="form__ownershipInputs hide">
         <span>Фізична особа</span><input type="radio" name="ownerShipInput">
         <span>Юридична особа</span><input type="radio" name="ownerShipInput">
+      </div>
+
+      <div class="form__debt" id="debtBlock">
+        <span>Сума боргу:</span>
+        <input type="text" id="debt">
       </div>
 
       <div class="form__result">
