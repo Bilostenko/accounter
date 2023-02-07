@@ -55,10 +55,11 @@ input[type='radio']:checked:after {
 .form__persAddress, .form__debt {
   display: flex;
   justify-content: space-between;
+
 }
 
 input[type="text"] {
-  width: 80%;
+  width: 30vw;
 }
 
 .form__propertyInputs, .form__ownershipInputs {
@@ -90,4 +91,9 @@ button:hover{
 
 .hide{
   display: none !important;
+}
+
+.form__result{
+  display: flex;
+  gap: 30px;
 }

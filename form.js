@@ -4,8 +4,9 @@ const ownershipInputs = document.querySelector('.form__ownershipInputs')
 const property = document.querySelector('#property')
 const noneProperty = document.querySelector('#noneProperty')
 const cost = document.querySelector('.form__result-input')
+const physical = document.querySelector('#physical')
+const judical = document.querySelector('#judical')
 let minSalary = 6700
-let commission = debt.value*0.02
 
 
 noneProperty.addEventListener('change', toggleData)
@@ -17,8 +18,22 @@ function toggleData() {
   ownershipInputs.classList.toggle('hide')
   debtBlock.classList.toggle('hide')
   cost.innerHTML = ""
+  debt.value = ""
 }
 
-function payment(){
-
+function payment() {
+  if (property.checked == true) {
+    if ((debt.value * 0.02) <= (minSalary * 10)) {
+      cost.innerHTML = (debt.value * 0.02).toFixed(2) + " грн"
+    } else if ((debt.value * 0.02) > (minSalary * 10)) {
+      cost.innerHTML = (minSalary * 10) + " грн"
+    }
+  } else if (noneProperty.checked == true) {
+    if (physical.checked == true) {
+      cost.innerHTML = minSalary + " грн"
+    } else if (judical.checked == true) {
+      cost.innerHTML = minSalary * 2 + " грн"
+    }
+  }
 }
+
