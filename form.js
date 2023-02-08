@@ -12,6 +12,8 @@ let minSalary = 6700
 noneProperty.addEventListener('change', toggleData)
 property.addEventListener('change', toggleData)
 debt.addEventListener('input', payment)
+judical.addEventListener('change', payment)
+physical.addEventListener('change', payment)
 
 
 function toggleData() {
@@ -22,18 +24,25 @@ function toggleData() {
 }
 
 function payment() {
-  if (property.checked == true) {
+
+  if (property.checked) {
+
+    physical.checked = false;
+    judical.checked = false;
+
     if ((debt.value * 0.02) <= (minSalary * 10)) {
       cost.innerHTML = (debt.value * 0.02).toFixed(2) + " грн"
     } else if ((debt.value * 0.02) > (minSalary * 10)) {
       cost.innerHTML = (minSalary * 10) + " грн"
     }
-  } else if (noneProperty.checked == true) {
-    if (physical.checked == true) {
+  } else if (noneProperty.checked) {
+      if (physical.checked) {
       cost.innerHTML = minSalary + " грн"
-    } else if (judical.checked == true) {
+    } else if (judical.checked) {
       cost.innerHTML = minSalary * 2 + " грн"
     }
   }
 }
+
+
 
