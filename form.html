@@ -28,18 +28,18 @@
 
       <div class="form__propertyInputs">
         <span>Майнове</span> <input type="radio" name="propInput" id="property" checked>
-        <span>Немайнове</span> <input type="radio" name="propInput" id="noneProperty">
+        <span>Немайнове</span> <input type="radio" name="propInput" id="non-property">
       </div>
 
-      <div class="form__ownershipInputs hide">
-        <span>Фізична особа</span><input type="radio" name="ownerShipInput" id="physical">
-        <span>Юридична особа</span><input type="radio" name="ownerShipInput" id="judical">
-      </div>
+        <div class="form__ownershipInputs">
+          <span>Фізична особа</span><input type="radio" name="ownerShipInput" id="physical">
+          <span>Юридична особа</span><input type="radio" name="ownerShipInput" id="judical">
+        </div>
 
-      <div class="form__debt" id="debtBlock">
-        <span>Сума боргу:</span>
-        <input type="text" id="debt">
-      </div>
+        <div class="form__debt" id="debtBlock">
+          <span>Сума боргу:</span>
+          <input type="text" id="debt">
+        </div>
 
       <div class="form__result">
         <span>КОМІСІЯ:</span>
@@ -48,7 +48,11 @@
 
       <div class="footer__btns">
         <button>Сформувати платіж</button>
-        <button>Сформувати квитанцію</button>
+        <a href="./bill.html" target="_self">
+          <input type="button" value="Сформувати квитанцію" id="form-bill">
+         <!--  <button>Сформувати квитанцію</button> -->
+        </a>
+        
       </div>
     </form>
   </section>

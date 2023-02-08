@@ -58,6 +58,10 @@ input[type='radio']:checked:after {
 
 }
 
+#form-bill{
+  cursor: pointer;
+}
+
 input[type="text"] {
   width: 30vw;
 }
@@ -68,13 +72,16 @@ input[type="text"] {
   align-items: center;
   justify-content: space-between;
 }
+:has(#non-property:not(:checked))+.form__ownershipInputs{
+display: none;
+}
 
 .footer__btns{
   display: flex;
   justify-content: space-around;
  flex-wrap: wrap;
 }
-button{
+button, #form-bill{
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -88,6 +95,10 @@ button:hover{
   background-color: #ccc;
   transform: scale(1.1);
 }
+#form-bill:hover{
+  background-color: #ccc;
+  transform: scale(1.1);
+}
 
 .hide{
   display: none !important;
@@ -96,4 +107,7 @@ button:hover{
 .form__result{
   display: flex;
   gap: 30px;
+}
+.form__propertyInputs:has(#property:not(:checked))~#debtBlock{
+  display: none;
 }
