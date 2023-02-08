@@ -29,18 +29,22 @@ function payment() {
 
     if ((debt.value * 0.02) <= (minSalary * 10)) {
       cost.innerHTML = (debt.value * 0.02).toFixed(2) + " грн"
+      localStorage.setItem('cost',((debt.value * 0.02).toFixed(2)))
     } else if ((debt.value * 0.02) > (minSalary * 10)) {
       cost.innerHTML = (minSalary * 10) + " грн"
+      localStorage.setItem('cost',(minSalary * 10))
     }
   } else if (nonProperty.checked) {
     if (physical.checked) {
       cost.innerHTML = minSalary + " грн"
+      localStorage.setItem('cost',minSalary)
     } else if (judical.checked) {
       cost.innerHTML = minSalary * 2 + " грн"
+      localStorage.setItem('cost',(minSalary * 2))
     }
   }
 
-  localStorage.setItem("cost")
+  
 }
 
 
