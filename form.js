@@ -1,6 +1,8 @@
-const debtBlock = document.querySelector('#debtBlock')
+const debtBlock = document.querySelector('#debt-block')
 const debt = document.querySelector('#debt')
-const ownershipInputs = document.querySelector('.form__ownershipInputs')
+const persData = document.querySelector('#pers-data-input')
+const persAddress = document.querySelector('#pers-address-input')
+const ownershipInputs = document.querySelector('.form__ownership-inputs')
 const property = document.querySelector('#property')
 const nonProperty = document.querySelector('#non-property')
 const cost = document.querySelector('.form__result-input')
@@ -14,6 +16,8 @@ property.addEventListener('change', payment)
 debt.addEventListener('input', payment)
 judical.addEventListener('change', payment)
 physical.addEventListener('change', payment)
+persData.addEventListener('input', personalData)
+persAddress.addEventListener('input', personalData)
 
 
 function toggleData() {
@@ -45,6 +49,13 @@ function payment() {
   }
 
   
+}
+
+function personalData(){
+localStorage.setItem('personalData', persData.value)
+}
+function personalAddress(){
+localStorage.setItem('personalAddress', persAddress.value)
 }
 
 

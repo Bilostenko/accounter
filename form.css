@@ -51,14 +51,16 @@ input[type='radio']:checked:after {
   border: 2px solid white;
 }
 
-.form__persData,
-.form__persAddress, .form__debt {
+.form__pers-data,
+.form__pers-address,
+.form__debt {
   display: flex;
   justify-content: space-between;
 
 }
 
-#form-bill{
+#form-bill,
+#form-payment {
   cursor: pointer;
 }
 
@@ -66,22 +68,27 @@ input[type="text"] {
   width: 30vw;
 }
 
-.form__propertyInputs, .form__ownershipInputs {
+.form__property-inputs,
+.form__ownership-inputs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-:has(#non-property:not(:checked))+.form__ownershipInputs{
-display: none;
+
+:has(#non-property:not(:checked))+.form__ownership-inputs {
+  display: none;
 }
 
-.footer__btns{
+.footer__btns {
   display: flex;
   justify-content: space-around;
- flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-button, #form-bill{
+
+button,
+#form-bill,
+#form-payment {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -91,23 +98,31 @@ button, #form-bill{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-button:hover{
-  background-color: #ccc;
-  transform: scale(1.1);
-}
-#form-bill:hover{
+
+button:hover {
   background-color: #ccc;
   transform: scale(1.1);
 }
 
-.hide{
+#form-bill:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+#form-payment:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+.hide {
   display: none !important;
 }
 
-.form__result{
+.form__result {
   display: flex;
   gap: 30px;
 }
-.form__propertyInputs:has(#property:not(:checked))~#debtBlock{
+
+.form__property-inputs:has(#property:not(:checked))~#debt-bloc {
   display: none;
 }

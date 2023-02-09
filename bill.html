@@ -52,7 +52,7 @@
                     <table class="info_2" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="ban ftd2">&nbsp;</td>
-                            <td class="tac std2" id="INN">09</td>
+                            <td class="tac std2" id="INN"></td>
                         </tr>
                         <tr>
                             <td class="ban ftd2">&nbsp;</td>
@@ -205,6 +205,10 @@ appointment">Авансовий внесок</td>
         const cost = document.querySelector('#sum3');
          cost.innerHTML = `<b>${localStorage.cost} грн.</b> `
         /*  cost.innerHTML = `<b>${localStorage.getItem('cost')} грн.</b> ` */
+
+        const fio = document.querySelector('#fio2');
+        fio.innerHTML = `Прізвище, ім'я та по батькові, адреса платника:   <b> ${localStorage.personalData} </b> </br> <b> ${localStorage.personalAddress} </b>`;
+
         </script>
     </body>
 </html>
