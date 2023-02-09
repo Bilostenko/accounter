@@ -17,20 +17,26 @@ debt.addEventListener('input', payment)
 judical.addEventListener('change', payment)
 physical.addEventListener('change', payment)
 persData.addEventListener('input', personalData)
-persAddress.addEventListener('input', personalData)
+persAddress.addEventListener('input', personalAddress)
 
 
-function toggleData() {
-
-  cost.innerHTML = ""
-  debt.value = ""
+/* prevent entering negative numbers */
+debt.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
 }
+
+persData.onkeydown = function(e) {
+  var key = e.keyCode;
+  return ((key >= 65 && key <= 90) || key == 8 ||  key == 32);
+};
 
 function payment() {
 
   if (property.checked) {
-
-
     if ((debt.value * 0.02) <= (minSalary * 10)) {
       cost.innerHTML = (debt.value * 0.02).toFixed(2) + " грн"
       localStorage.setItem('cost',((debt.value * 0.02).toFixed(2)))
@@ -46,9 +52,7 @@ function payment() {
       cost.innerHTML = minSalary * 2 + " грн"
       localStorage.setItem('cost',(minSalary * 2))
     }
-  }
-
-  
+  }  
 }
 
 function personalData(){
