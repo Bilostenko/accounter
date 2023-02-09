@@ -28,7 +28,7 @@ debt.onkeydown = function(e) {
         return false;
     }
 }
-
+/* prevent entering numbers in text input*/
 persData.onkeydown = function(e) {
   var key = e.keyCode;
   return ((key >= 65 && key <= 90) || key == 8 ||  key == 32);
