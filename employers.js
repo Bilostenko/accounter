@@ -1,20 +1,16 @@
+const array = [];
+const num = +prompt('Enter the number of employees');
 
-let employersArr = [{},{}]
-employersArr[0].name = prompt('enter first name');
-employersArr[0].sName = prompt('enter surname');
-employersArr[0].age = +prompt('enter age');
-employersArr[0].occupation = prompt('enter your occupation');
-employersArr[0].show = function(){
-  return alert(this.name + " " + this.sName + " " + this.age + " " + this.occupation)
+for (let i = 1; i <= num; i++) {
+    array[i] = {
+        firstName: prompt('Enter First Name ' + i + ' employee'),
+        lastName: prompt('Enter Last Name ' + i + ' employee'),
+        age: +prompt('Enter age ' + i + ' employee'),
+        occupation: prompt('Enter occupation' + i + ' employee'),
+        show: function () {
+            document.write('Employee ' + i + ": " + this.firstName + ', ' + this.lastName + ', ' + this.age + ', ' + this.occupation + "." + '<br>');
+        }
+    }
+    array[i].show();
+
 }
-
-employersArr[1].name = prompt('enter another first name');
-employersArr[1].sName = prompt('enter another surname');
-employersArr[1].age = +prompt('enter another age');
-employersArr[1].occupation = prompt('enter another your occupation');
-employersArr[1].show = function(){
-  return alert(this.name + " " + this.sName + " " + this.age + " " + this.occupation)
-}
-
-employersArr[0].show();
-employersArr[1].show();
